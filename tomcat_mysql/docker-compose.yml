@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: dev_mysql
+    command: mysqld --user=root
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: zwroty_e_strix_com
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+    networks:
+      app_net4:
+        ipv4_address: 10.99.103.2
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: dev_pma
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8183:80
+    networks:
+      app_net4:
+        ipv4_address: 10.99.103.3
+
+  tomcat-mock:
+    image: estrix/tomcat-mock
+    container_name: tomcat-mock
+    build: ./docker/tomcat-mock
+    volumes:
+      - ./war/tomcat/:/opt/tomcat/webapps/
+      - ./logs/tomcat/:/opt/tomcat/logs/
+    environment:
+      - TOMCAT_USER=root
+      - TOMCAT_PASSWORD=password
+    ports:
+      - 8082:8080
+      - 8443:8443
+    networks:
+      app_net4:
+        ipv4_address: 10.99.103.4
+
+networks:
+  app_net4:
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.99.103.0/24"
