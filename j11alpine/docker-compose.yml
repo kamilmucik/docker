@@ -1,0 +1,57 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: dev_mysql_j11alpine
+    command: mysqld --user=root
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: zwroty_e_strix_com
+    volumes:
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+    networks:
+      app_net6:
+        ipv4_address: 10.99.106.2
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: dev_pma_j11alpine
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8183:80
+    networks:
+      app_net6:
+        ipv4_address: 10.99.106.3
+
+  tomcat:
+    image: jarservice
+    container_name: jarservice
+    build: ./docker/service
+    volumes:
+      - ./logs/service/:/var/log/
+    environment:
+      - TOMCAT_USER=root
+      - TOMCAT_PASSWORD=password
+    ports:
+      - 8082:8088
+    networks:
+      app_net6:
+        ipv4_address: 10.99.106.4
+
+networks:
+  app_net6:
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.99.106.0/24"
