@@ -1,0 +1,7 @@
+[2022-01-09 17:01:01.222][main][INFO ][p.e.s.SpringBootWebApplication] -> Starting SpringBootWebApplication v0.0.1-SNAPSHOT on 52072a2701cc with PID 1 (/app.jar started by root in /)
+[2022-01-09 17:01:01.250][main][DEBUG][p.e.s.SpringBootWebApplication] -> Running with Spring Boot v2.1.18.RELEASE, Spring v5.1.19.RELEASE
+[2022-01-09 17:01:01.268][main][INFO ][p.e.s.SpringBootWebApplication] -> No active profile set, falling back to default profiles: default
+[2022-01-09 17:01:06.832][main][INFO ][p.e.s.c.m.OnSubstituteNotExistsCondition] -> No replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will be created
+[2022-01-09 17:01:07.007][main][INFO ][p.e.s.c.m.OnForceApiMockCondition] -> Mock replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will not be created
+[2022-01-09 17:01:24.904][main][INFO ][p.e.s.c.m.OnSubstituteNotExistsCondition] -> No replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will be created
+[2022-01-09 17:01:25.131][main][INFO ][p.e.s.c.m.OnForceApiMockCondition] -> Mock replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will not be created

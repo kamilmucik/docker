@@ -1,0 +1,100 @@
+[2022-01-09 17:01:01.222][main][INFO ][p.e.s.SpringBootWebApplication] -> Starting SpringBootWebApplication v0.0.1-SNAPSHOT on 52072a2701cc with PID 1 (/app.jar started by root in /)
+[2022-01-09 17:01:01.222][main][INFO ][p.e.s.SpringBootWebApplication] -> Starting SpringBootWebApplication v0.0.1-SNAPSHOT on 52072a2701cc with PID 1 (/app.jar started by root in /)
+[2022-01-09 17:01:01.250][main][DEBUG][p.e.s.SpringBootWebApplication] -> Running with Spring Boot v2.1.18.RELEASE, Spring v5.1.19.RELEASE
+[2022-01-09 17:01:01.250][main][DEBUG][p.e.s.SpringBootWebApplication] -> Running with Spring Boot v2.1.18.RELEASE, Spring v5.1.19.RELEASE
+[2022-01-09 17:01:01.268][main][INFO ][p.e.s.SpringBootWebApplication] -> No active profile set, falling back to default profiles: default
+[2022-01-09 17:01:01.268][main][INFO ][p.e.s.SpringBootWebApplication] -> No active profile set, falling back to default profiles: default
+[2022-01-09 17:01:04.331][main][INFO ][o.s.c.a.ConfigurationClassParser] -> Properties location [file:/application.yml] not resolvable: /application.yml (No such file or directory)
+[2022-01-09 17:01:06.589][main][INFO ][org.reflections.Reflections] -> Reflections took 414 ms to scan 2 urls, producing 64 keys and 133 values 
+[2022-01-09 17:01:06.832][main][INFO ][p.e.s.c.m.OnSubstituteNotExistsCondition] -> No replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will be created
+[2022-01-09 17:01:06.832][main][INFO ][p.e.s.c.m.OnSubstituteNotExistsCondition] -> No replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will be created
+[2022-01-09 17:01:06.996][main][INFO ][org.reflections.Reflections] -> Reflections took 95 ms to scan 2 urls, producing 64 keys and 133 values 
+[2022-01-09 17:01:07.007][main][INFO ][p.e.s.c.m.OnForceApiMockCondition] -> Mock replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will not be created
+[2022-01-09 17:01:07.007][main][INFO ][p.e.s.c.m.OnForceApiMockCondition] -> Mock replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will not be created
+[2022-01-09 17:01:20.616][main][INFO ][o.s.d.r.c.RepositoryConfigurationDelegate] -> Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-01-09 17:01:24.904][main][INFO ][p.e.s.c.m.OnSubstituteNotExistsCondition] -> No replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will be created
+[2022-01-09 17:01:24.904][main][INFO ][p.e.s.c.m.OnSubstituteNotExistsCondition] -> No replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will be created
+[2022-01-09 17:01:25.131][main][INFO ][p.e.s.c.m.OnForceApiMockCondition] -> Mock replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will not be created
+[2022-01-09 17:01:25.131][main][INFO ][p.e.s.c.m.OnForceApiMockCondition] -> Mock replacement found for pl.estrix.shopsync.service.impl.VersionServiceImpl. Bean will not be created
+[2022-01-09 17:01:25.648][main][INFO ][o.s.d.r.c.RepositoryConfigurationDelegate] -> Finished Spring Data repository scanning in 4869ms. Found 3 JPA repository interfaces.
+[2022-01-09 17:01:35.818][main][INFO ][o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] -> No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+[2022-01-09 17:01:35.867][main][INFO ][o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] -> No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+[2022-01-09 17:01:35.970][main][INFO ][o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] -> No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+[2022-01-09 17:01:37.628][main][INFO ][o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] -> Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@52350abb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022-01-09 17:01:37.749][main][INFO ][o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] -> Bean 'roleHierarchy' of type [org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022-01-09 17:01:37.767][main][INFO ][o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] -> Bean 'methodSecurityExpressionHandler' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022-01-09 17:01:37.785][main][INFO ][o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] -> Bean 'methodSecurityConfig' of type [pl.estrix.shopsync.configuration.MethodSecurityConfig$$EnhancerBySpringCGLIB$$3b556d49] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022-01-09 17:01:37.836][main][INFO ][o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] -> Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022-01-09 17:01:37.980][main][INFO ][o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] -> Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$3a7d831c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022-01-09 17:01:39.248][main][INFO ][o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker] -> Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022-01-09 17:01:45.922][main][INFO ][o.s.b.w.e.tomcat.TomcatWebServer] -> Tomcat initialized with port(s): 8088 (http)
+[2022-01-09 17:01:46.135][main][INFO ][o.a.coyote.http11.Http11NioProtocol] -> Initializing ProtocolHandler ["http-nio-8088"]
+[2022-01-09 17:01:46.284][main][INFO ][o.a.catalina.core.StandardService] -> Starting service [Tomcat]
+[2022-01-09 17:01:46.296][main][INFO ][o.a.catalina.core.StandardEngine] -> Starting Servlet engine: [Apache Tomcat/9.0.39]
+[2022-01-09 17:01:47.539][main][INFO ][o.a.c.c.C.[Tomcat].[localhost].[/]] -> Initializing Spring embedded WebApplicationContext
+[2022-01-09 17:01:47.542][main][INFO ][o.s.web.context.ContextLoader] -> Root WebApplicationContext: initialization completed in 44717 ms
+[2022-01-09 17:01:49.431][main][INFO ][com.zaxxer.hikari.HikariDataSource] -> HikariPool-1 - Starting...
+[2022-01-09 17:01:51.600][main][INFO ][com.zaxxer.hikari.HikariDataSource] -> HikariPool-1 - Start completed.
+[2022-01-09 17:01:52.701][main][INFO ][o.h.jpa.internal.util.LogHelper] -> HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+[2022-01-09 17:01:54.068][main][INFO ][org.hibernate.Version] -> HHH000412: Hibernate Core {5.3.18.Final}
+[2022-01-09 17:01:54.112][main][INFO ][org.hibernate.cfg.Environment] -> HHH000206: hibernate.properties not found
+[2022-01-09 17:01:55.851][main][INFO ][o.h.annotations.common.Version] -> HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+[2022-01-09 17:01:58.526][main][INFO ][org.hibernate.dialect.Dialect] -> HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2022-01-09 17:02:06.034][main][INFO ][o.h.t.s.internal.SchemaCreatorImpl] -> HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@42cc183e'
+[2022-01-09 17:02:06.063][main][INFO ][o.s.o.j.LocalContainerEntityManagerFactoryBean] -> Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-01-09 17:02:11.409][main][INFO ][o.h.h.i.QueryTranslatorFactoryInitiator] -> HHH000397: Using ASTQueryTranslatorFactory
+[2022-01-09 17:02:17.854][main][INFO ][o.s.s.w.DefaultSecurityFilterChain] -> Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10980560, org.springframework.security.web.context.SecurityContextPersistenceFilter@7fe07361, org.springframework.security.web.header.HeaderWriterFilter@1283ca23, org.springframework.security.web.authentication.logout.LogoutFilter@4e375bba, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f2d890c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ef4f627, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79a201cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@739e8b96, org.springframework.security.web.session.SessionManagementFilter@aa61e4e, org.springframework.security.web.access.ExceptionTranslationFilter@4b56b031, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@149c39b]
+[2022-01-09 17:02:24.683][main][INFO ][o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] -> No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+[2022-01-09 17:02:24.697][main][INFO ][o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] -> No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+[2022-01-09 17:02:24.741][main][INFO ][o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor] -> No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+[2022-01-09 17:02:29.438][main][INFO ][o.s.s.c.ThreadPoolTaskScheduler] -> Initializing ExecutorService 'taskScheduler'
+[2022-01-09 17:02:29.913][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {router} as a subscriber to the 'podamInputChannel' channel
+[2022-01-09 17:02:29.917][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.podamInputChannel' has 1 subscriber(s).
+[2022-01-09 17:02:29.937][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#0
+[2022-01-09 17:02:29.952][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'booleanChannel' channel
+[2022-01-09 17:02:29.976][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.booleanChannel' has 1 subscriber(s).
+[2022-01-09 17:02:29.982][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#1
+[2022-01-09 17:02:29.987][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'byteChannel' channel
+[2022-01-09 17:02:29.991][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.byteChannel' has 1 subscriber(s).
+[2022-01-09 17:02:29.994][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#2
+[2022-01-09 17:02:30.000][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'charChannel' channel
+[2022-01-09 17:02:30.025][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.charChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.010][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#3
+[2022-01-09 17:02:30.015][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'shortChannel' channel
+[2022-01-09 17:02:30.019][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.shortChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.026][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#4
+[2022-01-09 17:02:30.033][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'intChannel' channel
+[2022-01-09 17:02:30.038][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.intChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.043][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#5
+[2022-01-09 17:02:30.078][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'longChannel' channel
+[2022-01-09 17:02:30.083][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.longChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.087][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#6
+[2022-01-09 17:02:30.104][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'floatChannel' channel
+[2022-01-09 17:02:30.116][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.floatChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.120][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#7
+[2022-01-09 17:02:30.130][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'doubleChannel' channel
+[2022-01-09 17:02:30.137][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.doubleChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.143][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#8
+[2022-01-09 17:02:30.147][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'stringChannel' channel
+[2022-01-09 17:02:30.149][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.stringChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.155][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#9
+[2022-01-09 17:02:30.158][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'enumChannel' channel
+[2022-01-09 17:02:30.166][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.enumChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.174][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#10
+[2022-01-09 17:02:30.181][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {service-activator} as a subscriber to the 'genericTypeChannel' channel
+[2022-01-09 17:02:30.201][main][INFO ][o.s.i.channel.DirectChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.genericTypeChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.205][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started org.springframework.integration.config.ConsumerEndpointFactoryBean#11
+[2022-01-09 17:02:30.518][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+[2022-01-09 17:02:30.533][main][INFO ][o.s.i.c.PublishSubscribeChannel] -> Channel 'org.springframework.context.support.ClassPathXmlApplicationContext@88b76f2.errorChannel' has 1 subscriber(s).
+[2022-01-09 17:02:30.540][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started _org.springframework.integration.errorLogger
+[2022-01-09 17:02:43.388][main][INFO ][o.s.s.c.ThreadPoolTaskExecutor] -> Initializing ExecutorService 'applicationTaskExecutor'
+[2022-01-09 17:02:53.684][main][WARN ][o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration] -> spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-01-09 17:03:20.198][main][INFO ][o.s.b.a.w.s.WelcomePageHandlerMapping] -> Adding welcome page template: index
+[2022-01-09 17:03:28.508][main][WARN ][o.t.templatemode.TemplateMode] -> [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2022-01-09 17:03:48.373][main][INFO ][o.s.s.c.ThreadPoolTaskScheduler] -> Initializing ExecutorService 'taskScheduler'
+[2022-01-09 17:04:30.310][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+[2022-01-09 17:04:30.552][main][INFO ][o.s.i.c.PublishSubscribeChannel] -> Channel 'package-webapp.errorChannel' has 1 subscriber(s).
+[2022-01-09 17:04:30.884][main][INFO ][o.s.i.endpoint.EventDrivenConsumer] -> started _org.springframework.integration.errorLogger
+[2022-01-09 17:04:41.695][main][INFO ][o.a.coyote.http11.Http11NioProtocol] -> Starting ProtocolHandler ["http-nio-8088"]
