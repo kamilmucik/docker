@@ -55,7 +55,8 @@ $exercise->readOne();
         </div>
         <div class="form-group">
           <label for="image_base64">Obrazek:</label>
-          <input type="text" name="image_base64" class="form-control" id="image_base64" value="<?php echo $exercise->image_base64 ?>">
+          <input type="hidden" name="image_base64" class="form-control" id="image_base64" value="<?php echo $exercise->image_base64 ?>">
+          <img src="data:image/png;base64,<?php echo $exercise->image_base64 ?>">
         </div>
 
         <button type="submit" name="formSubmit" class="btn btn-primary btn-lg btn-block">Zapisz</button>

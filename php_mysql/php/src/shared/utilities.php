@@ -32,10 +32,14 @@ class Utilities{
                 $page_count++;
             }
         }
- 
+
+        $previous_page = $page > 1 ? $page -1 : 1;
+        $next_page = $page < $total_pages ? $page + 1 : $total_pages;
         // button for last page
+        $paging_arr["total_pages"] = $total_pages;
         $paging_arr["last"] = $page<$total_pages ? "{$page_url}page={$total_pages}" : "";
- 
+        $paging_arr["previous"] = "{$page_url}page={$previous_page}";
+        $paging_arr["next"] = "{$page_url}page={$next_page}";
         // json format
         return $paging_arr;
     }

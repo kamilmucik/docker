@@ -1,7 +1,9 @@
 <?php
 
 // include database and object files
+include_once '../config/core.php';
 include_once '../config/database.php';
+include_once '../shared/utilities.php';
 include_once '../objects/exercise.php';
 include_once '../objects/profile_exercise.php';
  
@@ -12,10 +14,10 @@ $db = $database->getConnection();
 // initialize object
 $exercise = new Exercise($db);
 // $profile = new Profile($db);
+$utilities = new Utilities();
 
 $profile_id = (int) $_GET['id'];
 $exercise->profile_id=$profile_id;
-
 
 if(isset($_GET['exercise_id']) ){
     $profile_exercise = new ExerciseProfile($db);
@@ -44,7 +46,8 @@ if(isset($_GET['reset']) ){
     $profile_exercise->reset();
 }
 
-$stmt = $exercise->findAllByProfile();
+$stmt = $exercise->readPagingByProfile($from_record_num, $records_per_page);
+// $stmt = $exercise->findAllByProfile();
 $num = $stmt->rowCount();
 ?>
 
@@ -53,7 +56,7 @@ $num = $stmt->rowCount();
 <head>
 	<meta charset=utf-8>
 	<meta name=viewport content="width=device-width,initial-scale=1">	
-	<title>Zakupy</title>
+	<title>Workout</title>
 	
 	<link rel="stylesheet" href="../vendor/bootstrap.min.css">
 	<script src="../vendor/jquery.min.js"></script>
@@ -92,17 +95,46 @@ $num = $stmt->rowCount();
 						<a href="?id='.$profile_id.'&del='.$row['id'].'" data-id="'.$row['name'].'" role="button">
 							<img class="img-responsive center-block" style="width: 32px;" src="../vendor/delete-icon.png" alt="usun">
 						</a></td>
-					<td><a href="./?id='.$profile_id.'&done_id='.$row['id'].'" >'.$row['name']. ' ->' . $row['is_done'] .'</a></td>
-					
+					<td>
+					    <a href="./?id='.$profile_id.'&done_id='.$row['id'].'" >'.$row['name']. ' ->' . $row['is_done'] .'
+					        <img src="data:image/png;base64,'.$row['image_base64'].'">
+					    </a>
+					</td>
 				</tr>';
 		}
 	}
 	?>	
             </tbody>
-        </table> 
+        </table>
 
-        
-        <a href="/profile/add_exercise.php?id=<?php echo $profile_id;?>" class="btn btn-primary btn-lg btn-block" role="button">Dodaj ćwiczenie</a>	
+
+<?php
+    $total_rows=$exercise->countByProfile();
+
+    $page_url="{$home_url}profile/index.php?id=". $profile_id . "&";
+    $paging=$utilities->getPaging($page, $total_rows, $records_per_page, $page_url);
+?>
+    <table style="width: 100%">
+        <tbody>
+            <tr>
+                <td>
+                    <a href="<?php echo $paging['previous'] ?>" class="btn btn-primary btn-lg btn-block" role="button">Poprzednia</a>
+                </td>
+                <td style="text-align: center;">
+                    <?php echo $page; ?> z <?php echo $paging['total_pages'] ?>
+                </td>
+                <td>
+                    <a href="<?php echo $paging['next'] ?>" class="btn btn-primary btn-lg btn-block" role="button">Następna</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+        </br>
+        </br>
+        <a href="/profile/add_exercise.php?id=<?php echo $profile_id;?>" class="btn btn-primary btn-lg btn-block" role="button">Dodaj ćwiczenie</a>
     </div>
 
     <footer class="container-fluid text-center">

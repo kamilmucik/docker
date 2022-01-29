@@ -5,14 +5,14 @@ error_reporting(E_ALL);
  
 // home page url
 //$home_url="http://localhost/api/";
-//$home_url="http://app.e-strix.local:81/api/lotto/";
-$home_url="http://www.e-strix.pl/zakupy/";
+$home_url="http://localhost:8000/";
+$page_title="Workout";
  
 // page given in URL parameter, default page is one
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
  
 // set number of records per page
-$records_per_page = 50;
+$records_per_page = 5;
  
 // calculate for the query LIMIT clause
 $from_record_num = ($records_per_page * $page) - $records_per_page;

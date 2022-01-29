@@ -1,7 +1,9 @@
 <?php
 
 // include database and object files
+include_once '../config/core.php';
 include_once '../config/database.php';
+include_once '../shared/utilities.php';
 include_once '../objects/exercise.php';
  
 // instantiate database and category object
@@ -10,11 +12,15 @@ $db = $database->getConnection();
 
 // initialize object
 $exercise = new Exercise($db);
+$utilities = new Utilities();
 
 $profile_id = (int) $_GET['id'];
+$exercise->profile_id=$profile_id;
 
-// query 
-$stmt = $exercise->readAll();
+// query
+
+$stmt = $exercise->readPaging($from_record_num, $records_per_page);
+// $stmt = $exercise->readAll();
 $num = $stmt->rowCount();
 ?>
 
@@ -55,13 +61,37 @@ $num = $stmt->rowCount();
 			extract($row);
 			
 			echo '<tr>
-					<td><a href="./index.php?id='.$profile_id.'&exercise_id='.$row['id'].'" >'.$row['name'].'</a></td>
+					<td>
+					<a href="./index.php?id='.$profile_id.'&exercise_id='.$row['id'].'" >'.$row['name'].'
+					<img src="data:image/png;base64,'.$row['image_base64'].'">
+					</a></td>
 				</tr>';
 		}
 	}
 	?>	
             </tbody>
-        </table>   
+        </table>
+        <?php
+            $total_rows=$exercise->count();
+
+            $page_url="{$home_url}profile/add_exercise.php?id=". $profile_id . "&";
+            $paging=$utilities->getPaging($page, $total_rows, $records_per_page, $page_url);
+        ?>
+            <table style="width: 100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="<?php echo $paging['previous'] ?>" class="btn btn-primary btn-lg btn-block" role="button">Poprzednia</a>
+                        </td>
+                        <td style="text-align: center;">
+                            <?php echo $page; ?> z <?php echo $paging['total_pages'] ?>
+                        </td>
+                        <td>
+                            <a href="<?php echo $paging['next'] ?>" class="btn btn-primary btn-lg btn-block" role="button">Następna</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
 
     </div>

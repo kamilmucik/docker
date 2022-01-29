@@ -28,7 +28,7 @@ include_once '../objects/exercise.php';
 
     <div class="panel-body">
 
-      <form action="/exercise/index.php" method="post">
+      <form action="/exercise/index.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="name">Nazwa:</label>
           <input type="name" name="name" class="form-control" id="name" >
@@ -38,8 +38,8 @@ include_once '../objects/exercise.php';
           <input type="text" name="description" class="form-control" id="description" >
         </div>
         <div class="form-group">
-          <label for="image_base64">Obrazek:</label>
-          <input type="text" name="image_base64" class="form-control" id="image_base64" >
+          <label for="image_base64">Obrazek(400x225):</label>
+          <input type="file" name="fileToUpload" class="form-control" id="fileToUpload" >
         </div>
 
         <button type="submit" name="formSubmit" class="btn btn-primary btn-lg btn-block">Zapisz</button>

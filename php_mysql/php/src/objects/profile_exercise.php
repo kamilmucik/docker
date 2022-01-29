@@ -100,7 +100,6 @@ class ExerciseProfile{
 		}
 	}
 
-
 	// delete the product
 	function delete(){	 
 		// delete query
