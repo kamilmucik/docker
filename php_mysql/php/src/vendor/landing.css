@@ -1,0 +1,42 @@
+.not_done{
+
+}
+
+.done{
+    background-color: lightblue;
+}
+
+.delete_img{
+    min-width: 32px;
+    height: 32px;
+    overflow: hidden;
+    display: block;
+}
+
+.exercise_table{
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.exercise_block{
+    
+}
+
+.exercise_image{
+
+}
+
+.exercise_name{
+
+}
+
+.exercise_desc{
+
+
+}

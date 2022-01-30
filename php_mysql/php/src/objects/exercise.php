@@ -110,7 +110,6 @@ class Exercise{
 		$this->image_base64 = $row['image_base64'];
 	}
 
-    
 	// create product
 	function create(){
 	 

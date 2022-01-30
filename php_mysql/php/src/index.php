@@ -1,8 +1,10 @@
 <?php
 //phpinfo();
 // include database and object files
+include_once './config/core.php';
 include_once './config/database.php';
 include_once './objects/profile.php';
+include_once './objects/profile_exercise.php';
  
 // instantiate database and category object
 $database = new Database();
@@ -11,25 +13,24 @@ $db = $database->getConnection();
 // initialize object
 $profile = new Profile($db);
 
+if(isset($_GET['del']) ){
+	$profile_exercise = new ExerciseProfile($db);
+	$profile->id = (int) $_GET['del'];
+	$profile->delete();
+	$profile_exercise->profile_id = (int) $_GET['del'];
+	$profile_exercise->deleteByProfile();
+}
 
-// if(isset($_GET['del']) ){
-// 	$item->category_id = (int) $_GET['del'];
-// 	$category->id = (int) $_GET['del'];
-// 	$item->deleteByCategory();
-// 	$category->delete();
-// }
-
-// if(isset($_POST['formSubmit']) ){
-// 	$category->name = $_POST['name'];
+if(isset($_POST['formSubmit']) ){
+	$profile->name = $_POST['name'];
 	
-// 	if (isset($_POST['id'])){
-// 		$category->id = $_POST['id'];
-// 		$category->update();
-// 	} else {
-// 		$category->summary = 0;
-// 		$category->create();
-// 	}
-// }
+	if (isset($_POST['id'])){
+		$profile->id = $_POST['id'];
+		$profile->update();
+	} else {
+		$profile->create();
+	}
+}
 
 
 // query 
@@ -56,13 +57,13 @@ $num = $stmt->rowCount();
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Workout</a>
+      <a class="navbar-brand" href="<?php echo $home_url; ?>">Workout</a>
     </div>
   </div>
 </nav>
 
 <div class="panel-body">	
-<a href="/profile/add.php" class="btn btn-primary btn-lg btn-block" role="button">Dodaj</a>	
+<a href="<?php echo $home_url; ?>profile/add.php" class="btn btn-primary btn-lg btn-block" role="button">Dodaj</a>	
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -81,12 +82,12 @@ $num = $stmt->rowCount();
 			
 			echo '<tr>
 					<td>
-						<a href="#" data-href="?del='.$row['id'].'"  data-id="'.$row['name'].'" data-toggle="modal" data-target="#confirm-delete" role="button">
-							<img class="img-responsive center-block" style="width: 32px;" src="vendor/delete-icon.png" alt="usun">
+						<a href="#" data-href="'.$home_url.'?del='.$row['id'].'"  data-id="'.$row['name'].'" data-toggle="modal" data-target="#confirm-delete" role="button">
+							<img class="delete_img" class="img-responsive center-block" style="width: 32px;" src="vendor/delete-icon.png" alt="usun">
 						</a></td>
-					<td><a href="./profile/?id='.$row['id'].'" >'.$row['name'].'</a></td>
+					<td><a href="'.$home_url.'profile/?id='.$row['id'].'" >'.$row['name'].'</a></td>
 					<td>
-						<a href="./lista/?id='.$row['id'].'" role="button">
+						<a href="'.$home_url.'profile/edit.php?id='.$row['id'].'" role="button">
 							<img class="img-responsive center-block" style="width: 32px;" src="vendor/edit-icon.png" alt="zobacz">
 						</a>
 					</td>
@@ -97,7 +98,7 @@ $num = $stmt->rowCount();
 	</tbody>
 </table>
 
-<a href="/exercise/" class="btn btn-primary btn-lg btn-block" role="button">Zarządzaj</a>	
+<a href="<?php echo $home_url; ?>exercise/" class="btn btn-primary btn-lg btn-block" role="button">Zarządzaj</a>	
 </div>
 
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

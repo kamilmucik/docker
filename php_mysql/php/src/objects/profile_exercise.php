@@ -116,4 +116,21 @@ class ExerciseProfile{
 		}
 		return false;		 
 	}
+
+	// delete the product
+	function deleteByProfile(){	 
+		// delete query
+		$query = "DELETE FROM " . $this->table_name . " WHERE profile_id = ?";
+		// prepare query
+		$stmt = $this->conn->prepare($query);
+		// sanitize
+		$this->profile_id=htmlspecialchars(strip_tags($this->profile_id));
+		// bind id of record to delete
+		$stmt->bindParam(1, $this->profile_id);
+		// execute query
+		if($stmt->execute()){
+			return true;
+		}
+		return false;		 
+	}
 }

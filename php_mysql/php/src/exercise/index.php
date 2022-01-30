@@ -15,7 +15,12 @@ $utilities = new Utilities();
 $exercise = new Exercise($db);
 
 if(isset($_POST['formSubmit']) ){
-    $image_base64 = $_POST['image_base64'];
+
+    $image_base64 = "";
+    if(isset($_POST['image_base64']) ){
+        $image_base64 = $_POST['image_base64'];
+    }
+    
     if(isset($_FILES['fileToUpload']) ){
         $target_dir = "../uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -100,14 +105,14 @@ $num = $stmt->rowCount();
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Workout: Ćwiczenia</a>
+            <a class="navbar-brand" href="<?php echo $home_url; ?>">Workout: Ćwiczenia</a>
         </div>
     </div>
     </nav>
 
     <div class="panel-body">
-        <a href="/exercise/add.php" class="btn btn-primary btn-lg btn-block" role="button">Dodaj</a>	
-        <table class="table table-hover">
+        <a href="<?php echo $home_url; ?>exercise/add.php" class="btn btn-primary btn-lg btn-block" role="button">Dodaj</a>	
+        <table class="table table-hover exercise_table">
             <thead>
                 <tr>
                     <th></th>
@@ -123,10 +128,18 @@ $num = $stmt->rowCount();
 			
 			echo '<tr>
 					<td>
-						<a href="#" data-href="?del='.$row['id'].'"  data-id="'.$row['name'].'" data-toggle="modal" data-target="#confirm-delete" role="button">
-							<img class="img-responsive center-block" style="width: 32px;" src="../vendor/delete-icon.png" alt="usun">
+						<a href="#" data-href="'.$home_url.'exercise/?del='.$row['id'].'"  data-id="'.$row['name'].'" data-toggle="modal" data-target="#confirm-delete" role="button">
+							<img class="delete_img" class="img-responsive center-block" style="width: 32px;" src="../vendor/delete-icon.png" alt="usun">
 						</a></td>
-					<td><a href="./edit.php?id='.$row['id'].'" >'.$row['name'].' <img src="data:image/png;base64,'.$row['image_base64'].'"></a></td>
+					<td>
+                        <a href="'.$home_url.'exercise/edit.php?id='.$row['id'].'" >
+                            <div class="exercise_block">
+                                <div class="exercise_image"><img src="data:image/png;base64,'.$row['image_base64'].'"></div>
+                                <div class="exercise_name">'.$row['name'].'</div>
+                                <div class="exercise_desc">'.$row['description'].'</div>
+                            </div>
+                        </a>
+                    </td>
 				</tr>';
 		}
 	}

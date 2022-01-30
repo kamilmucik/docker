@@ -19,7 +19,7 @@
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Workout</a>
+            <a class="navbar-brand" href="<?php echo $home_url; ?>">Workout</a>
         </div>
     </div>
     </nav>

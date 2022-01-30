@@ -68,15 +68,31 @@ $num = $stmt->rowCount();
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Workout</a>
+            <a class="navbar-brand" href="<?php echo $home_url; ?>">Workout</a>
         </div>
     </div>
     </nav>
 
     <div class="panel-body">	
         
-        <a href="/profile/?reset=true&id=<?php echo $profile_id; ?>" class="btn btn-primary btn-lg btn-block" role="button">Reset wyników</a>	
-        <table class="table table-hover">
+        
+        <table style="width: 100%">
+            <tbody>
+                <tr>
+                    <td>
+                    <a href="<?php echo $home_url; ?>profile/?reset=true&id=<?php echo $profile_id; ?>" class="btn btn-primary btn-lg btn-block" role="button">Reset wyników</a>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                    <a href="<?php echo $home_url; ?>profile/add_exercise.php?id=<?php echo $profile_id;?>" class="btn btn-primary btn-lg btn-block" role="button">Dodaj ćwiczenie</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table class="table table-hover exercise_table">
                 <thead>
                     <tr>
                         <th></th>
@@ -90,15 +106,20 @@ $num = $stmt->rowCount();
 		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 			extract($row);
 			
-			echo '<tr>
-					<td>
-						<a href="?id='.$profile_id.'&del='.$row['id'].'" data-id="'.$row['name'].'" role="button">
+            $tr_class = $row['is_done'] == 0 ? "not_done" : "done";
+			echo '<tr >
+					<td class="'.$tr_class.'">
+						<a class="delete_img" href="'.$home_url.'/profile/?id='.$profile_id.'&del='.$row['id'].'" data-id="'.$row['name'].'" role="button">
 							<img class="img-responsive center-block" style="width: 32px;" src="../vendor/delete-icon.png" alt="usun">
 						</a></td>
 					<td>
-					    <a href="./?id='.$profile_id.'&done_id='.$row['id'].'" >'.$row['name']. ' ->' . $row['is_done'] .'
-					        <img src="data:image/png;base64,'.$row['image_base64'].'">
-					    </a>
+                        <a href="'.$home_url.'profile/?id='.$profile_id.'&done_id='.$row['id'].'" >
+                            <div class="exercise_block">
+                                <div class="exercise_image"><img src="data:image/png;base64,'.$row['image_base64'].'"></div>
+                                <div class="exercise_name">'.$row['name'].'</div>
+                                <div class="exercise_desc">'.$row['description'].'</div>
+                            </div>
+                        </a>
 					</td>
 				</tr>';
 		}
@@ -131,10 +152,7 @@ $num = $stmt->rowCount();
     </table>
 
 
-
-        </br>
-        </br>
-        <a href="/profile/add_exercise.php?id=<?php echo $profile_id;?>" class="btn btn-primary btn-lg btn-block" role="button">Dodaj ćwiczenie</a>
+        
     </div>
 
     <footer class="container-fluid text-center">

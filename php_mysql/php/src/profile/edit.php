@@ -2,15 +2,28 @@
 // include database and object files
 include_once '../config/core.php';
 include_once '../config/database.php';
-include_once '../objects/exercise.php';
- 
+include_once '../objects/profile.php';
+
+$page_title = "Workout: Edytuj Profil";
+
+// instantiate database and category object
+$database = new Database();
+$db = $database->getConnection();
+
+// initialize object
+$profile = new Profile($db);
+
+$profile_id = (int) $_GET['id'];
+$profile->id=$profile_id;
+
+$profile->readOne();
 ?>
 <!doctype html>
 <html lang=en>
   <head>
     <meta charset=utf-8>
     <meta name=viewport content="width=device-width,initial-scale=1">	
-    <title>Workout: Ćwiczenia</title>
+    <title><?php echo $page_title; ?></title>
     
     <link rel="stylesheet" href="../vendor/bootstrap.min.css">
     <script src="../vendor/jquery.min.js"></script>
@@ -22,25 +35,18 @@ include_once '../objects/exercise.php';
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
           <div class="navbar-header">
-              <a class="navbar-brand" href="<?php echo $home_url; ?>">Workout: Ćwiczenia</a>
+              <a class="navbar-brand" href="<?php echo $home_url; ?>"><?php echo $page_title; ?></a>
           </div>
       </div>
     </nav>
 
     <div class="panel-body">
 
-      <form action="<?php echo $home_url; ?>exercise/index.php" method="post" enctype="multipart/form-data">
+      <form action="<?php echo $home_url; ?>index.php" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id" class="form-control" id="id" value="<?php echo $profile->id ?>">
         <div class="form-group">
           <label for="name">Nazwa:</label>
-          <input type="name" name="name" class="form-control" id="name" >
-        </div>
-        <div class="form-group">
-          <label for="description">Opis:</label>
-          <input type="text" name="description" class="form-control" id="description" >
-        </div>
-        <div class="form-group">
-          <label for="image_base64">Obrazek(400x225):</label>
-          <input type="file" name="fileToUpload" class="form-control" id="fileToUpload" >
+          <input type="name" name="name" class="form-control" id="name" value="<?php echo $profile->name ?>">
         </div>
 
         <button type="submit" name="formSubmit" class="btn btn-primary btn-lg btn-block">Zapisz</button>

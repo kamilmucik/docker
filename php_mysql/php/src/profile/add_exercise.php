@@ -41,13 +41,13 @@ $num = $stmt->rowCount();
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Workout: Ćwiczenia</a>
+            <a class="navbar-brand" href="<?php echo $home_url; ?>">Workout: Ćwiczenia</a>
         </div>
     </div>
     </nav>
 
     <div class="panel-body">
-        <table class="table table-hover">
+        <table class="table table-hover exercise_table">
             <thead>
                 <tr>
                     <th>Wybierz</th>
@@ -62,9 +62,17 @@ $num = $stmt->rowCount();
 			
 			echo '<tr>
 					<td>
-					<a href="./index.php?id='.$profile_id.'&exercise_id='.$row['id'].'" >'.$row['name'].'
-					<img src="data:image/png;base64,'.$row['image_base64'].'">
-					</a></td>
+
+                    <a href="'.$home_url.'profile/index.php?id='.$profile_id.'&exercise_id='.$row['id'].'" >
+                            <div class="exercise_block">
+                                <div class="exercise_image"><img src="data:image/png;base64,'.$row['image_base64'].'"></div>
+                                <div class="exercise_name">'.$row['name'].'</div>
+                                <div class="exercise_desc">'.$row['description'].'</div>
+                            </div>
+                        </a>
+                    
+                    
+                    </td>
 				</tr>';
 		}
 	}

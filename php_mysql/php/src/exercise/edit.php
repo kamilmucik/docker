@@ -1,6 +1,7 @@
 <?php
 
 // include database and object files
+include_once '../config/core.php';
 include_once '../config/database.php';
 include_once '../objects/exercise.php';
  
@@ -34,13 +35,13 @@ $exercise->readOne();
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
           <div class="navbar-header">
-              <a class="navbar-brand" href="/">Workout: Ćwiczenia</a>
+              <a class="navbar-brand" href="<?php echo $home_url; ?>">Workout: Ćwiczenia</a>
           </div>
       </div>
     </nav>
 
     <div class="panel-body">
-      <form action="/exercise/index.php" method="post">
+      <form action="<?php echo $home_url; ?>/exercise/index.php" method="post">
         <div class="form-group" style="display: none;">
           <label for="id">ID:</label>
           <input type="id" name="id" class="form-control" id="id" value="<?php echo $exercise->id ?>">
