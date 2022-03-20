@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  oracle11xe:
+    image: oracle11xe
+    container_name: oracle11xe
+    build: ./config/xe11
+    ports:
+      - 1521:1521
+    networks:
+      db_net:
+        ipv4_address: 10.99.105.2
+
+networks:
+  db_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.99.105.0/24"
