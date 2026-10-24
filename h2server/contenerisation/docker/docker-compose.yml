@@ -1,0 +1,23 @@
+
+services:
+
+  h2-db-svc:
+    container_name: h2-db-svc
+    image: postgres:17-alpine
+    #restart: always
+    environment:
+      - POSTGRES_USER=estrix_panel
+      - POSTGRES_PASSWORD=postgres
+      - DATABASE_HOST=127.0.0.1
+    ports:
+      - '5432:5432'
+    networks:
+      h2server-network:
+        aliases:
+          - h2.db.e-strix.pl
+
+
+
+networks:
+  h2server-network:
+    driver: bridge
